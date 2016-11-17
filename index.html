@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Quiz Testing</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -22,14 +22,14 @@
            var database = firebase.database().ref('questions');
            var data;
 			function submit(){
-			    var question = $("#question").html();
+			    var question = $("#question").text();
 				console.log(question);
-				var A = $("#choiceA").html();
-				var B = $("#choiceB").html();
-				var C = $("#choiceC").html();
-				var D = $("#choiceD").html();
-				var E = $("#choiceE").html();
-				var answer = $("#answer").html();
+				var A = $("#choiceA").text();
+				var B = $("#choiceB").text();
+				var C = $("#choiceC").text();
+				var D = $("#choiceD").text();
+				var E = $("#choiceE").text();
+				var answer = $("#answer").text();
 				
 				database.push({
 					"question":  question  ,
