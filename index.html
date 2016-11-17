@@ -22,14 +22,14 @@
            var database = firebase.database().ref('questions');
            var data;
 			function submit(){
-			    var question = $("#question").text();
+			    var question = $("#question").val();
 				console.log(question);
-				var A = $("#choiceA").text();
-				var B = $("#choiceB").text();
-				var C = $("#choiceC").text();
-				var D = $("#choiceD").text();
-				var E = $("#choiceE").text();
-				var answer = $("#answer").text();
+				var A = $("#choiceA").val();
+				var B = $("#choiceB").val();
+				var C = $("#choiceC").val();
+				var D = $("#choiceD").val();
+				var E = $("#choiceE").val();
+				var answer = $("#answer").val();
 				
 				database.push({
 					"question":  question  ,
