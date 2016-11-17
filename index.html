@@ -1,1 +1,67 @@
-<h1> hello! </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
+    
+    
+    
+    <script>
+	        var config = {
+                apiKey: "AIzaSyBUTkNiYlmjiTG1oZUZbS6lVk1jOltQ0j8",
+                databaseURL: "https://castrochat-a4c6d.firebaseio.com",
+            };
+            firebase.initializeApp(config);
+
+            // Get a reference to the database service
+           var database = firebase.database().ref('questions');
+           var data;
+			function submit(){
+			    var question = $("#question").html();
+				console.log(question);
+				var A = $("#choiceA").html();
+				var B = $("#choiceB").html();
+				var C = $("#choiceC").html();
+				var D = $("#choiceD").html();
+				var E = $("#choiceE").html();
+				var answer = $("#answer").html();
+				
+				database.push({
+					"question":  question  ,
+				    "A":  A ,
+					"B":  B ,
+					"C":  C ,
+					"D":  D ,
+					"E":  E ,
+					"answer":  answer ,		
+				});
+			}
+    
+    </script>
+</head>
+<body>
+  
+<div class="container">
+    
+    <textarea id="question">
+        
+    </textarea>
+    <input type="text" id="choiceA">
+    <input type="text" id="choiceB">
+    <input type="text" id="choiceC">
+    <input type="text" id="choiceD">
+    <input type="text" id="choiceE">
+    <input type="text" id="answer" placeholder="Answer">
+    <button onclick="submit()">Submit</button>
+
+
+</div>
+
+</body>
+</html>
+
