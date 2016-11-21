@@ -30,6 +30,7 @@
 				var D = $("#choiceD").val();
 				var E = $("#choiceE").val();
 				var answer = $("#answer").val();
+		
 				
 				database.push({
 					"question":  question  ,
@@ -38,7 +39,9 @@
 					"C":  C ,
 					"D":  D ,
 					"E":  E ,
-					"answer":  answer ,		
+					"answer":  answer ,
+					"timestamp": Date().getTime()
+					
 				});
 			}
     
