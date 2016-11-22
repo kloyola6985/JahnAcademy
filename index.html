@@ -23,16 +23,14 @@
            var data;
 			function submit(){
 			    var question = $("#question").val();
-				console.log(question);
+				console.log("Question logged!");
 				var A = $("#choiceA").val();
 				var B = $("#choiceB").val();
 				var C = $("#choiceC").val();
 				var D = $("#choiceD").val();
 				var E = $("#choiceE").val();
 				var answer = $("#answer").val();
-				var time = new Date().getTime();
-				
-				// var time = Date().getTime();			
+				var time = new Date().getTime();	
 		
 				
 				database.push({
