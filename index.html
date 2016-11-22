@@ -29,8 +29,10 @@
 				var C = $("#choiceC").val();
 				var D = $("#choiceD").val();
 				var E = $("#choiceE").val();
+				var F = $(#chocieF").val();
 				var answer = $("#answer").val();
-				var time = Date().getTime();			
+				
+				// var time = Date().getTime();			
 		
 				
 				database.push({
@@ -40,8 +42,9 @@
 					"C":  C ,
 					"D":  D ,
 					"E":  E ,
+					"F": F ,
 					"answer":  answer ,
-					"timestamp": Date().getTime()
+					
 					
 				});
 			}
@@ -58,7 +61,10 @@
     <input type="text" id="choiceC" placeholder="C">
     <input type="text" id="choiceD" placeholder="D">
     <input type="text" id="choiceE" placeholder="E">
+    <input type="text" id="choiceF" placeholder="F">
+	
     <input type="text" id="answer" placeholder="Answer">
+	
     <button onclick="submit()">Submit</button>
 
 
