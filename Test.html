@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quiz taker</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
+  <script src="mustache.js"></script>  
+  <script id="myTemplate" type="text/template">
+
+              <div class="item">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">{{question}}</div>
+                      <div class="panel-body">
+                            <div>A) {{A}}</div>
+							<div>B) {{B}}</div>
+							<div>C) {{C}}</div>
+							<div>D) {{D}}</div>
+							<div>E) {{E}}</div>
+							<input type="text" id=userAnswer" placeholder="Answer">
+							
+                      </div>
+                    </div>
+              </div>
+				
+			
+        
+    </script>  
+    
+    
+    <script>
+	        var config = {
+                apiKey: "AIzaSyCmRod-AtB1ogKGRPo_jvBhOCtfICiwjrU",
+                databaseURL: "https://jahnacademy.firebaseio.com/",
+            };
+            firebase.initializeApp(config);
+
+            // Get a reference to the database service
+           var database = firebase.database().ref('Questions');
+		   var data, build;
+		    var myTemplate = $("#myTemplate").html()
+           database.on('value',function(snapshot){
+		   build="";
+               data = snapshot.val();
+               for(key in data){
+                    build += Mustache.render(myTemplate,data[key]);
+                }
+				$("#output").html(build);
+           })
+		   
+    
+    </script>
+	  
+</head>
+<body>
+    
+<div class="container" id="output">
+
+</div>
+
+</body>
+</html>
+
