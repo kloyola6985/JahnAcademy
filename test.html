@@ -10,7 +10,6 @@
   <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
   <script src="mustache.js"></script>  
   <script id="myTemplate" type="text/template">
-
               <div class="item">
                     <div class="panel panel-default">
                       <div class="panel-heading">{{question}}</div>
@@ -20,16 +19,25 @@
 							<div>C) {{C}}</div>
 							<div>D) {{D}}</div>
 							<input type="text" id=userAnswer" placeholder="Answer">
-							<button onclick="submit()">Submit</button>
-							
+							<button onclick="checker()">Check Answer</button>
                       </div>
                     </div>
               </div>
-				
 			
-        
     </script>  
-    
+   <script>
+   var answer = $("#answer").val(); 
+   var userAnswer = "";
+   function checker(){
+		if (userAnswer =  answer) {
+			window.alert("correct!");
+    } else {
+        window.alert("Wrong. Sorry.");
+    }
+}
+
+   
+</script>   
     
     <script>
 	        var config = {
@@ -56,8 +64,8 @@
 	  
 </head>
 <body>
-    
 <div class="container" id="output">
+
 </div>
 
 </body>
